@@ -1,0 +1,114 @@
+unit uAppSettings;
+
+interface
+
+type
+  TAppSettingDataType = (adInt, adBool, adString);
+  
+  TAppSettingIndex = (aiFirstUse);
+  TAppSetting = record
+    Key: string;
+    DefaultInt, CurrentInt: Integer;
+    DefaultBool, CurrentBool: Boolean;
+    DefaultString, CurrentString: String;
+  end;
+  
+  TAppSettings = class
+  private
+    FSettings: Array[TAppSettingIndex] of TAppSetting;
+    procedure ReadOneSetting(AppSettingIndex: TAppSettingIndex; FormatString: String;
+                             DataType: TAppSettingDataType;
+                             var I: Integer; var B:Boolean; var S: String;
+                             DI: Integer; DB: Boolean; DS: String);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    
+    function ReadInt(AppSettingIndex: TAppSettingIndex; FormatString: String = ''; DefaultValue: Integer = 0): Integer;
+    function ReadBool(AppSettingIndex: TAppSettingIndex; FormatString: String = ''; DefaultValue:Boolean = False): String;
+    function ReadString(AppSettingIndex: TAppSettingIndex; FormatString: String = ''; DefaultValue: String = ''):String;
+    
+    procedure WriteInt(AppSettingIndex: TAppSettingIndex; Value: Integer; FormatString: String = '');
+    procedure WriteBool(AppSettingInex: TAppSettingIndex; Value: Boolean; FormatString: String = '');
+  end;
+  
+var
+  AppSettings: TAppSettings;
+  
+implementation
+
+uses
+  System.SysUtils;
+
+
+constructor TAppSettings.Create;
+begin
+
+end;
+
+destructor TAppSettings.Destroy;
+begin
+  inherited;
+end;
+
+function TAppSettings.ReadBool(AppSettingIndex: TAppSettingIndex;
+  FormatString: String; DefaultValue: Boolean): String;
+begin
+
+end;
+
+function TAppSettings.ReadInt(AppSettingIndex: TAppSettingIndex; FormatString: String = ''; DefaultValue: Integer = 0): Integer;
+var
+  S, DS: String;
+  B, DB: Boolean;
+begin
+  ReadOneSetting(AppSettingIndex, FormatString, adInt, Result, B, S, DefaultValue, DB, DS);
+end;
+
+function TAppSettings.ReadString(AppSettingIndex: TAppSettingIndex;
+  FormatString, DefaultValue: String): String;
+begin
+
+end;
+
+procedure TAppSettings.WriteBool(AppSettingInex: TAppSettingIndex;
+  Value: Boolean; FormatString: String);
+begin
+
+end;
+
+procedure TAppSettings.WriteInt(AppSettingIndex: TAppSettingIndex;
+  Value: Integer; FormatString: String);
+begin
+
+end;
+
+
+procedure TAppSettings.ReadOneSetting(AppSettingIndex: TAppSettingIndex;
+                                      FormatString: String;
+                                      DataType: TAppSettingDataType;
+                                      var I: Integer; var B:Boolean; var S: String;
+                                      DI: Integer; DB: Boolean; DS: String);
+var
+  Key: String;
+begin
+  I := FSettings[AppSettingIndex].DefaultInt;
+  B := FSettings[AppSettingIndex].DefaultBool;
+  S := FSettings[AppSettingIndex].DefaultString;
+  if DI <> 0 then I := DI;
+  if DB <> False then B := DB;
+  if DS <> '' then S := DS;
+
+  Key := FSettings[AppSettingIndex].Key;
+  if FormatString <> '' then
+    Key := Format(Key, [FormatString]);
+  case DataType of
+    adInt: I := FSettings[AppSettingIndex].CurrentInt;
+    adBool: B := FSettings[AppSettingIndex].CurrentBool;
+    adString: S := FSettings[AppSettingIndex].CurrentString;
+  else
+    raise Exception.CreateFmt(SUnsupportedSettingsDatatype, [FSettings[AppSettingIndex].Key]);
+  end
+end;
+
+end.

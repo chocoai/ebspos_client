@@ -1,0 +1,36 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{00989B6C-2556-4754-A150-69A33675DB9B}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="SimplePos.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="SimplePos">
+			<MSBuild Projects="SimplePos.dproj"/>
+		</Target>
+		<Target Name="SimplePos:Clean">
+			<MSBuild Projects="SimplePos.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="SimplePos:Make">
+			<MSBuild Projects="SimplePos.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="SimplePos"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="SimplePos:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="SimplePos:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

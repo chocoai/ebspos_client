@@ -1,0 +1,50 @@
+unit uAppSettings;
+
+interface
+
+uses
+  System.SysUtils, System.IniFiles;
+
+type
+  TAppSettingDataType = (adInt, adBool, adString);
+  
+  TAppSettingIndex = (aiFirstUse);
+  TAppSetting = record
+    Key: string;
+    DefaultInt, CurrentInt: Integer;
+    DefaultBool, CurrentBool: Boolean;
+    DefualtString, CurrentString: String;    
+  end;
+  
+  TAppSettings = class
+  private
+    FIni: TIniFile;
+    FSettings: Array[TAppSettingIndex] of TAppSetting;
+    
+  public
+    constructor Create;
+    destructor Destroy; override;
+    
+    function ReadInt(AppSettingIndex: TAppSettingIndex; FormateString: String = ''; DefaultValue: Integer = 0): Integer;
+    function ReadBool(AppSettingIndex: TAppSettingIndex; FormateString: String = ''; DefaultValue:Boolean = False): String;
+    function ReadString(AppSettingIndex: TAppSettingIndex; FormateString: String = ''; DefaultValue: String = ''):String;
+    
+    procedure WriteInt(AppSettingIndex: TAppSettingIndex; Value: Integer; FormateString: String = '');
+    procedure WriteBool(AppSettingInex: TAppSettingIndex; Value: Boolean; FormateString: String = '');
+  end;
+  
+var
+  AppSettings: TAppSettings;
+  
+implementation
+
+
+function TAppSettings.ReadInt(AppSettingIndex: TAppSettingIndex; FormateString: String = '', DefaultValue: Integer = 0): Integer;
+var
+  S: String;
+  B: Boolean;
+begin
+  Read(AppSettingIndex, FormateString, adInt, Result, B, S, DefaultValue);
+end;
+
+end.
