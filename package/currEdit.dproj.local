@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.158,=xmlrtl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.127,=designide.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.151,=vclx.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.145,=vclactnband.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.402,=rtl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.117,=G:\PK.Home\WorkFolder\demo\delphi\SimplePOS\src\currEdit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.136,=vcl.dcp</Transaction>
+  </Transactions>
+</BorlandProject>

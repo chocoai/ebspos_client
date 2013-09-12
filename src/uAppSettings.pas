@@ -3,7 +3,6 @@ unit uAppSettings;
 interface
 
 type
-  {$I const.inc}
   
   TAppSettingDataType = (adInt, adBool, adString);
   
@@ -33,6 +32,8 @@ type
     procedure WriteInt(AppSettingIndex: TAppSettingIndex; Value: Integer; FormatString: String = '');
     procedure WriteBool(AppSettingInex: TAppSettingIndex; Value: Boolean; FormatString: String = '');
   end;
+  
+  {$I const.inc}
   
 var
   AppSettings: TAppSettings;

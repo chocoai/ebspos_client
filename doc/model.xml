@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Model name="SimplePos" id="SimplePos" language="delphi">
+  <Diagram name="default" id="ID=5" metaclass="Namespace Diagram" file="default.txvpck.html">
+    <Property name="defaultDiagram">true</Property>
+    <DiagramReference id="ID=64" element="ID=3" metaclass="Namespace">
+      <Property name="Gradient color 1">255, 255, 255</Property>
+      <Property name="Gradient color 2">255, 255, 255</Property>
+      <Property name="Color Area">Whole Shape</Property>
+      <Property name="Gradient ON">False</Property>
+      <Property name="Gradient Mode">Vertical</Property>
+      <DiagramReference id="ID=66" element="ID=6" metaclass="Module" />
+    </DiagramReference>
+    <DiagramReference id="ID=65" element="ID=4" metaclass="Namespace">
+      <Property name="Gradient color 1">255, 255, 255</Property>
+      <Property name="Gradient color 2">255, 255, 255</Property>
+      <Property name="Color Area">Whole Shape</Property>
+      <Property name="Gradient ON">False</Property>
+      <Property name="Gradient Mode">Vertical</Property>
+      <DiagramReference id="ID=67" element="ID=9" metaclass="Class">
+        <Property name="Sealed">False</Property>
+        <Property name="Abstract">False</Property>
+        <Property name="Persistent">False</Property>
+        <Property name="Extends">Vcl.Forms.TForm</Property>
+      </DiagramReference>
+      <DiagramReference id="ID=68" element="ID=10" metaclass="Module" />
+    </DiagramReference>
+  </Diagram>
+  <Package name="SimplePos" id="ID=3">
+    <Diagram name="SimplePos" id="ID=7" metaclass="Namespace Diagram" file="default.txvpck.html">
+      <Property name="defaultDiagram">true</Property>
+      <DiagramReference id="ID=43" element="ID=6" metaclass="Module">
+        <Property name="Gradient ON">False</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Color Area">Whole Shape</Property>
+      </DiagramReference>
+    </Diagram>
+    <Classifier name="globals SimplePos" id="ID=6" type="Module" visibility="public">
+      <Uses />
+    </Classifier>
+  </Package>
+  <Package name="uMain" id="ID=4">
+    <Diagram name="uMain" id="ID=11" metaclass="Namespace Diagram" file="default.txvpck.html">
+      <Property name="defaultDiagram">true</Property>
+      <DiagramReference id="ID=69" element="ID=9" metaclass="Class">
+        <Property name="Sealed">False</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Abstract">False</Property>
+        <Property name="Persistent">False</Property>
+        <Property name="Gradient ON">False</Property>
+        <Property name="Extends">Vcl.Forms.TForm</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Color Area">Whole Shape</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+      </DiagramReference>
+      <DiagramReference id="ID=70" element="ID=10" metaclass="Module">
+        <Property name="Gradient ON">False</Property>
+        <Property name="Gradient color 2">255, 255, 255</Property>
+        <Property name="Gradient color 1">255, 255, 255</Property>
+        <Property name="Gradient Mode">Vertical</Property>
+        <Property name="Color Area">Whole Shape</Property>
+        <DiagramReference id="ID=71" element="ID=23" metaclass="Association Link">
+          <Property name="Directed">False</Property>
+          <Property name="Supplier">TMainForm</Property>
+          <Property name="Type">association</Property>
+          <Property name="Client">MainForm</Property>
+        </DiagramReference>
+      </DiagramReference>
+    </Diagram>
+    <Classifier name="TMainForm" id="ID=9" type="Class" visibility="public">
+      <Property name="Sealed">False</Property>
+      <Property name="Abstract">False</Property>
+      <Property name="Persistent">False</Property>
+      <Property name="Extends">Vcl.Forms.TForm</Property>
+      <Extends idref="ID=20" refFN="Vcl.Forms.TForm" doom="true" />
+      <Uses>
+        <Use element="ID=22" type="field_type" />
+      </Uses>
+      <Method id="ID=16" name="FormCreate" isSubroutine="true" visibility="public">
+        <Parameter elementName="Sender" id="ID3=16_63550304" type="TObject" systemType="TObject" isPrimitive="false" />
+        <Property name="Final">False</Property>
+        <Property name="Virtual">False</Property>
+        <Property name="Reintroduce">False</Property>
+        <Property name="Abstract">False</Property>
+        <Property name="Override">False</Property>
+        <Property name="Class">False</Property>
+        <ReturnType id="ID=16" type="" isPrimitive="true" />
+      </Method>
+    </Classifier>
+    <Classifier name="globals uMain" id="ID=10" type="Module" visibility="public">
+      <Link targetName="MainForm" id="ID=23" metaclass="Association Link" idref="ID=9">
+        <Property name="Directed">False</Property>
+        <Property name="Supplier">TMainForm</Property>
+        <Property name="Type">association</Property>
+        <Property name="Client">MainForm</Property>
+      </Link>
+      <Uses />
+      <Field fieldType="Field" elementName="MainForm" id="ID=22" typeref="ID=9" type="TMainForm" isPrimitive="false" visibility="internal">
+        <Property name="Const">False</Property>
+        <Property name="Type">TMainForm</Property>
+      </Field>
+    </Classifier>
+  </Package>
+</Model>

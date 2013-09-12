@@ -1,0 +1,7 @@
+*~
+*.exe
+*.db3
+*.sqlite
+*.dcu
+doc/**/*
+__history/**/*
