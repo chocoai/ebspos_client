@@ -3,5 +3,6 @@
 *.db3
 *.sqlite
 *.dcu
+*.log
 doc/**/*
 __history/**/*
